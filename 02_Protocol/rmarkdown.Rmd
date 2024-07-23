@@ -1,0 +1,239 @@
+---
+title: "Literature Review"
+bibliography: ../01_Input/references.bib
+csl: ../01_Input/agu.csl
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# Table of Metablic Processes 
+
+Last compiled on *`r format.POSIXct(Sys.time(), format = "%e %B %Y %H:%M")`*
+
+## Table 1
+
+
+```{r results = "asis"}
+
+tabledata <- rbind.data.frame(
+  list(
+    MetabolicProcess = "Aerobic respiration",
+    Reaction = "$\\mathrm{\\frac{1}{2} CH_{3}COOH}$", 
+    FreeEnergy = 437
+  )
+)
+names(tabledata) <- c(
+  "Metabolic Process",
+  "Reaction",
+  "Free Energy"
+)
+
+cat(
+  print(
+    knitr::kable(
+      tabledata,
+      col.names = c(
+        "Metabolic Process",
+        "Reaction",
+        "Free Energy"
+      )
+    )
+  ),
+  "\n\n"
+)
+
+
+
+```
+
+`r knitr::kable(tabledata)`
+
+
+## Table 2
+
+```{r results = "asis"}
+
+tabledata2 <- data.frame(
+  MetabolicProcess = c("Aerobic respiration",
+                       "Denitification:",
+                       "- *Nitrate reduction undefined*",
+                       "- *Nitrate reduction*",
+                       "- *Nitrus oxide reduction*",
+                       "Sulfate reduction", 
+                       "Methanogenesis",
+                       "Nitrification:",
+                       "*Ammonium oxidation*",
+                       "*Nitrate oxidation*",
+                       "Methantropy"),
+  Reaction = c("$\\mathrm{\\frac{1}{2} CH_{3}COOH + O_{2} \\longleftrightarrow CO_{2} + H_{2}O}$&nbsp;", 
+               "$\\mathrm{\\frac{1}{2} CH_{3}COOH + \\frac{4}{5}NO_{3}{}^{-} + \\frac{4}{5}H^{+} \\longleftrightarrow CO_{2} + \\frac{2}{5}N_{2} + \\frac{7}{5}H_{2}O}$&nbsp;",
+               "$~~\\mathrm{\\frac{1}{2} CH_{3}COOH + {2}NO_{3}{}^{-} \\longleftrightarrow CO_{2} + {2}NO_{2}{}^{-} + H_{2}O}$&nbsp;",
+               "$~~\\mathrm{\\frac{1}{2} CH_{3}COOH + {2}NO_{2}{}^{-} + {2}H^{+} \\longleftrightarrow CO_{2} + N_{2}O + 2H_{2}O}$&nbsp;",
+               "$~~\\mathrm{\\frac{1}{2} CH_{3}COOH + {2}N_{2}O \\longleftrightarrow CO_{2} + 2N_{2} + H_{2}O}$&nbsp;",
+               "$\\mathrm{\\frac{1}{2} CH_{3}COOH + \\frac{1}{2} SO_{4}{}^{-2} + \\frac{1}{2} H^{+} \\longleftrightarrow \\frac{1}{2}HS^{-} + CO_{2} + H_{2}O}$&nbsp;",
+               "$\\mathrm{\\frac{1}{2} CH_{3}COOH \\longleftrightarrow \\frac{1}{2} CO_{2} + \\frac{1}{2} CH_{4}}$&nbsp;",
+               "$\\mathrm{O_{2} + \\frac{1}{2}NH_{4}{}^{+} \\longleftrightarrow \\frac{1}{2}NO_{3}{}^{-} + H^{+} + \\frac{1}{2}H_{2}O}$&nbsp;",
+               "$~~\\mathrm{O_{2} + \\frac{2}{3}NH_{4}{}^{+} \\longleftrightarrow \\frac{2}{3}NO_{2}{}^{-} + \\frac{4}{3}H^{+} + \\frac{2}{3}H_{2}O}$&nbsp;",
+               "$~~\\mathrm{O_{2} + 2NO_{2}{}^{-} \\longleftrightarrow {2}NO_{3}{}^{-}}$&nbsp;",
+               "$\\mathrm{O_{2} + \\frac{1}{2}CH_{4} \\longleftrightarrow \\frac{1}{2}CO_{2} + H_{2}O}$&nbsp;"),
+  FreeEnergy = c(437, 410, 288, 415, 645, 38, 28, 174, 183, 148, 409)
+)
+
+
+names(tabledata2) <- c(
+  "Metabolic Process",
+  "Reaction",
+  "$E_S = -\\Delta G_{0}^{'} \\mathrm{(kJ ~mol^{-1})}$"
+)
+
+
+cat(
+  print(
+    knitr::kable(
+      tabledata2,
+      col.names = c(
+        "Metabolic Process",
+        "Reaction",
+        "$E_S = -\\Delta G_{0}^{'} \\mathrm{(kJ ~mol^{-1})}$"
+      )
+    )
+  ),
+  "\n\n"
+)
+
+
+```
+
+`r knitr::kable(tabledata2)`
+
+
+<table>
+  <tr>
+    <th>Metabolic Process</th>
+    <th>Reaction</th>
+    <th>$E_S = -\Delta G_{0}^{'} \mathrm{(kJ ~mol^{-1})}$</th>
+  </tr>
+</table>
+
+# N-DAMO
+
+*@zhang_nitrite-dependent_2024*
+
+### History
+
+earliest mentions, notable papers, etc
+
+*@zhu_combined_2011, @luesken_simultaneous_2011*
+
+### Where N-DAMO fits
+
+co-occurances, influences, etc
+
+# Modeling metabolic processes
+
+strategies, notable papers, other instances of modeling
+
+*@hall_linking_2011, @he_modelling_2013, @payn_generalized_2014, @reinhold_constraint-based_2019*
+
+\n\n
+
+# Annotated Bibliography
+
+1. **@budinich_multi-objective_2017**
+  - constraint-based modelling to build predictive models
+  - multi-objective flux balance analysis (MO-FBA) and multi-objective flux variability analysis (MO-FVA)
+  
+2. **@ettwig_nitrite-driven_2010**
+  - one of earliest n-damo papers
+  - presents evidence of new pathway producing oxygen
+      - couples anaerobic oxidation of methane with nitrate/nitrite reduction
+  - assembles complete genome of dominate bacterium, M.oxyfera
+  - results explain biochemical mechanism of poorly understood freshwater methane sink
+  
+3. **@gomez-gallego_n-damo_2022**
+  - annotations
+4. **@hall_linking_2011**
+  - Mini-review of applications of ecological stoichiometry
+  - synthesizes both theoretical frameworks and empirical studies to demonstrate how understanding the stoichiometric relationships between microbes and their environment can explain nutrient cycling, energy flow, and ecosystem stability
+5. **@he_modelling_2013**
+  - develops and evaluates kinetic model to describe N-DAMO
+      - based on Monod type kinetics and diffusion-reaction model 
+  - key kinetic parameters for n-damo bacteria identified
+  - methane not a limiting factor for n-damo process
+6. **@helton_thermodynamic_2015**
+  - Asking whether patterns of DOC, nitrite, and ammonium concentrations align w/ conceptual model of stoichiometric and thermodynamic controls. 
+  - results suggest that the relationships between both nitrate and DOC and nitrate and ammonium arise from the interaction of microbial biomass stoichiometry and the availability of terminal electron acceptors.
+      - to understand biogeochemical patterns, need conceptual and qualitative models integrating thermodynamic, stoichiometric, and evolutionary controls on biogeochemical cycling 
+7. **@hu_evidence_2014**
+  - obtained evidence for n-damo in 3 freshwater wetlands in China
+  - determined species presence and abundance of group A of M.oxyfera-like bacteria
+      - previously demonstrated as dominant bacteria in n-damo process
+  - estimated methane sink through n-damo process in wetlands
+      - 4.1-6.1 Tg average each year under anaerobic conditions
+8. **@hu_optimization_2019**
+  - focused on improving n-damo process performance through enhancing methane availability by investigating:
+      - immobilized biologically activated carbon (IC)
+      - high static pressure (HP)
+  - both improved activity of n-damo bacteria
+      - highest methane absorption + n-damo bacteria abundance in combination IC-HP
+9. **@jessup_big_2004**
+  - overviews studies addressing ecological questions using lab-based microbial model systems
+  - states that simplicity of the model systems is what makes them powerful tools, although there are practical limitations to models
+10. **@legierse_nitrate-dependent_2023**
+  - evaluates n-damo potential for decreasing methane release, removing excess nitrate from agricultural drainage ditches
+  - significant decrease in methane.nitrate seen only in brackish peatland site, not freshwater sediments
+      - n-damo bacteria likely out-competed by heterotrophic denitrifiers 
+  - demonstrates that effect of n-damo bioaugmentation is system specific
+11. **@luesken_simultaneous_2011**
+  - tested feasibility of coexistence of anammox and n-damo bacteria
+  - coculture with equal amounts established after 161 days
+      - converted nitrite at rate of 17.2 mmol per day
+  - early paper discussing n-damo and applications
+12. **@nie_operation_2020**
+  - investigated interactions between anammox in membrane biofilm reactor (MBfR)
+  - results provide promising operational strategies for high-rate of nitrogen removal in landfill leachate through integration of n-damo and anammox process
+13. **@payn_generalized_2014**
+  - developed model of aquatic microbial metabolism and growth
+      - simulates influence of multiple possible metabolic reactions on biogeochemistry of a system simultaneously
+  - contributes to generalized odeling of microbial metabolism
+14. **@prosser_role_2007**
+  - argues that application of theory is required most in microbial ecology yet severely lacking in the field
+  - describes areas of microbial ecology in which theory/theoretical framework can and should be applied
+15. **@reinhold_constraint-based_2019**
+  - Presents new method for simulating multiple linked biogeochemical cycles
+  - GANGSTA - Generalized Algorithm for Nutrient Growth, Stoichiometric, and Thermodynamic Analysis
+  - Approach used in paper allows for automatic creation of models of complex biochemical interactions
+16. **@ricciuto_integrative_2021**
+  - Expanded current earth energy model to include methods of predicting methane dynamics
+  - Found that with optimized model parameters, model accurately predicts methane fluxes and vertical profiles
+  - Provides framework for building and developing model
+17. **@riley_barriers_2011**
+  - Developed and tested new methane biogeochemical model within Community Earth Systems Model
+  - Model able to represent and predict methane processes but retains high level of uncertainty
+18. **@schneider_complexity_1994**
+  - proposes thermodynamic mdel for ecosystem development
+  - recommends methods for examining and modeling ecosystems
+19. **@shen_spatial_2019**
+  - Investigated competition between anammox and n-damo through examining spatial distribution in riverbed sediments
+  - n-damo patterns proved to be more complex, confined, and reached a peak deeper into riverbeds
+  - Results found spatial separation between processes
+20. **@vallino_ecosystem_2010**
+  - Investigates describing ecosystem biogeochemistry through application of the maximum entropy production (MEP) principle
+  - Builds optimized metabolic ecosystem network model
+  - Finds and discusses both advantages and disadvantages of MEP method 
+
+
+```{r results = "asis"}
+
+cat(
+  "Last compiled on *",
+  format.POSIXct(x = Sys.time(), format = "%e %B %Y %H:%M"),
+  "*\n\n",
+  sep = ""
+)
+
+```
+
+# References
